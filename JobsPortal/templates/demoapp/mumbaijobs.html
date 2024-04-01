@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="{%static "CSS/test.css" %}">
+  </head>
+  <body bgcolor="magenta">
+    <center>
+    <h1>Mumbai Jobs Information....</h1><hr>
+    <img src="{%static "images/mumbaiit1.jpg" %}" width="300" height="300">
+    <img src="{%static "images/mumbaiit2.jpg" %}" width="300" height="300">
+    <img src="{%static "images/mumbaiit3.jpg" %}" width="300" height="300">
+    {%if jobs_list%}
+    <table border="1">
+      <thead>
+        <th>Date</th>
+        <th>Company</th>
+        <th>Title</th>
+        <th>Eligibility</th>
+        <thAddress</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+      </thead>
+      {%for j in jobs_list%}
+      <tr>
+        <td>{{j.date}}</td>
+        <td>{{j.company}}</td>
+        <td>{{j.title}}</td>
+        <td>{{j.eligibility}}</td>
+        <td>{{j.address}}</td>
+        <td>{{j.email}}</td>
+        <td>{{j.mobno}}</td>
+      </tr>
+      {%endfor%}
+    </table>
+    {%else%}
+      <h2>No job records found!!</h2>
+    {%endif%}
+  </body>
+</html>
